@@ -176,12 +176,16 @@ public class RouteController {
 
  
 
+ 
+
+ 
+
 			Route getRoute = repo.findById(id).get();
 			String airlineIata = getRoute.getAirLineIata();
 			String airportToIata = getRoute.getIataTo();
 			String airportFromIata = getRoute.getIataFrom();
 			Airline getAirline = airportConfig
-					.getForObject("http://localhost:8080/getAirline/" + airlineIata, Airline.class);
+					.getForObject("http://localhost:8080/getAirlineName/" + airlineIata, Airline.class);
 			Airport getAirportTo = airportConfig
 					.getForObject("http://localhost:8085/getAirport/" + airportToIata, Airport.class);
 			Airport getAirportFrom = airportConfig
@@ -193,8 +197,14 @@ public class RouteController {
 
  
 
+ 
+
+ 
+
 		return itineraryList;
-	
+
+ 
+
 	}
 	
 	
