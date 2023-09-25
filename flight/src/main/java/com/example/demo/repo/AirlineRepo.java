@@ -9,4 +9,7 @@ public interface AirlineRepo extends JpaRepository<Airline, Long> {
 	@Query(value = " from Airline where code =:iataCode")
 	public Airline getAirlineByIataCode(String iataCode);
 
+	@Query(value = " from Airline where name =:iataName")
+	public Airline getAirlineByName(String iataName);
+
 }
