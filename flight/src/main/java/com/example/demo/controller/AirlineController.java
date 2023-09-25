@@ -62,4 +62,9 @@ public class AirlineController {
     	Airline air=repo.getAirlineByIataCode(iataCode);
     	return air;
     }
+    @GetMapping("/getAirlineName/{name}")
+    public Airline getAirlineByName(@PathVariable String name) {
+    	Airline air=repo.getAirlineByName(name);
+    	return air;
+    }
 }
